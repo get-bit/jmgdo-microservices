@@ -12,11 +12,6 @@ products = [
 ]
 
 #
-#Add all the REST API end-points here
-#
-
-app.run(port=5000,debug=True)
-
 # Example request - http://localhost:5000/products
 @app.route('/products', methods=['GET'])
 def get_products():
@@ -51,4 +46,7 @@ def remove_product(id):
     id = int(id)
     product = [x for x in products if x["id"] == id][0]
     products.remove(product)
-    return '', 204
+    return '', 204#
+
+app.run(port=5000,debug=True)
+
